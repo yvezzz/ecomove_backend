@@ -21,6 +21,7 @@ public class TrajetPersistenceAdapter implements TrajetRepositoryPort {
     public Trajet save(Trajet trajet) {
         TrajetEntity entity = mapToEntity(trajet);
         TrajetEntity saved = repository.save(entity);
+        repository.flush();
         return mapToDomain(saved);
     }
 

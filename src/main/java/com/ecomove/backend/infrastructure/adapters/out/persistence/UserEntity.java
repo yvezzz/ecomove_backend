@@ -13,7 +13,6 @@ import java.util.UUID;
 @Setter
 public class UserEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     
     private String nom;

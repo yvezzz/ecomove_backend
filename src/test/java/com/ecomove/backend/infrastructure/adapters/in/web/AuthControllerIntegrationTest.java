@@ -2,6 +2,7 @@ package com.ecomove.backend.infrastructure.adapters.in.web;
 
 import com.ecomove.backend.domain.model.Role;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -25,7 +26,8 @@ class AuthControllerIntegrationTest {
 
     @Test
     void shouldRegisterAndLogin() throws Exception {
-        String email = "test" + System.currentTimeMillis() + "@ecomove.com";
+        String uniqueId = UUID.randomUUID().toString().substring(0, 8);
+        String email = "test" + uniqueId + "@ecomove.com";
         RegisterRequest registerRequest = RegisterRequest.builder()
                 .nom("Test")
                 .prenom("User")

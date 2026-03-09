@@ -17,7 +17,9 @@ public class UserPersistenceAdapter implements UserRepositoryPort {
     @Override
     public User save(User domain) {
         UserEntity entity = mapToEntity(domain);
+        // Si l'entité existe déjà, merge, sinon Hibernate gère.
         UserEntity saved = repository.save(entity);
+        repository.flush(); // Force la synchro
         return mapToDomain(saved);
     }
 

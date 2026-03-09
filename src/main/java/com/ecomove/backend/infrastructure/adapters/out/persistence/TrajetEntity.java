@@ -13,7 +13,6 @@ import java.util.UUID;
 @Setter
 public class TrajetEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     
     private double latDepart;

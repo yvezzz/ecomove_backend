@@ -13,7 +13,6 @@ import java.util.UUID;
 @Setter
 public class ReservationEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     
     @Enumerated(EnumType.STRING)
